@@ -412,8 +412,8 @@ export const printChangelog = function (newIcons, modifiedIcons, renamedIcons, p
 export const getCompileOptions = () => {
   const compileOptions = {
     includeIcons: [],
-    strokeWidth: null,
-    fontForge: 'fontforge'
+    strokeWidth: 1.5,
+    fontForge: '/Applications/FontForge.app/Contents/MacOS/FFPython'
   }
 
   if (fs.existsSync('../compile-options.json')) {

@@ -74,9 +74,8 @@ const buildOutline = async () => {
             fs.writeFileSync(resolve(DIR, `icons-outlined/${type}/${filename}`), outlined, 'utf-8')
 
             // Fix outline
-            execSync(`fontforge -lang=py -script .build/fix-outline.py icons-outlined/${type}/${filename}`).toString()
+            execSync(`/Applications/FontForge.app/Contents/MacOS/FFPython .build/fix-outline.py icons-outlined/${type}/${filename}`).toString()
             execSync(`svgo icons-outlined/${type}/${filename}`).toString()
-
             // Add hash
             const fixedFileContent = fs
               .readFileSync(resolve(DIR, `icons-outlined/${type}/${filename}`), 'utf-8')
